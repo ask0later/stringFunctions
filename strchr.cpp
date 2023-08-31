@@ -40,16 +40,16 @@ char* MyStrChr (const char* pts, int symbol)
     int i = 0;
 
     while((pts[i] != symbol) && (pts[i] != '\0'))
-        {
+    {
         i++;
-        }
+    }
     int strlen_pts = strlen(pts);
     if (strlen_pts == i)
-        {
+    {
         return NULL;
-        }
+    }
     else
-        {
+    {
         return (char*) &pts[i];
-        }
+    }
 }
