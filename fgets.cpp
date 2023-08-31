@@ -5,11 +5,12 @@
 
 char* Fgets(char* str, int n, FILE *fp);
 
-int main()
+int main(int argc, char* argv[])
 {
     char str[100] = "";
     const int n = 3;
-    FILE *fp = NULL;
+    const char* filename = argv[1];
+    FILE *fp = fopen(filename, "r");
     Fgets(str, n, fp);
 }
 
@@ -17,9 +18,7 @@ char* Fgets(char* str, int n, FILE *fp)
 {
     assert(str);
 
-    const char* filename = "fgets.txt";
-
-    if ((fp=fopen(filename, "r")) != NULL)
+    if (fp != NULL)
     {
         int i = 0;
         while (((str[i] = fgetc(fp)) != '\0') && (i < n - 1))
