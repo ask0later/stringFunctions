@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 // puts, strchr, strncpy, strcat, strncat, fgets, strdup, getline
-void MyPuts(char* pts);
+int MyPuts(char* pts);
 
 int main()
 {
@@ -17,14 +17,19 @@ int main()
 
 }
 
-void MyPuts(char* pts)
+int MyPuts(char* pts)
 {
-    assert(pts);
+    if (pts != NULL)
+    {
+        int i = 0;
 
-    int i = 0;
-
-    for(i = 0; (pts[i]) != '\0'; i++)
+        for(i = 0; (pts[i]) != '\0'; i++)
         putchar(pts[i]);
 
-    putchar('\n');
+        putchar('\n');
+        return '\0';
+    else
+    {
+        return EOF;
+    }
 }
