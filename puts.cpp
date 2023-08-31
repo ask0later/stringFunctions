@@ -28,6 +28,7 @@ int MyPuts(char* pts)
 
         putchar('\n');
         return '\0';
+    }
     else
     {
         return EOF;
