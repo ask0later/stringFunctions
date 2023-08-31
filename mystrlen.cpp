@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-int MyStrlen (char str[]);
+size_t MyStrlen (char str[]);
 //void PrintArray();
 int main()
 {
@@ -12,14 +12,14 @@ int main()
     //PrintArray();
 }
 
-int MyStrlen (char* str)
+size_t MyStrlen (char* str)
 {
     assert(str);
 
     size_t i = 0;
     while( str[i] != '\0')
         i++;
-
+    
     return i;
 
 }
