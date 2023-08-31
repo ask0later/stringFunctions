@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+#include <math.h>
 
 char* StrnCpy(char* dest, char* src, size_t size);
 //void PrintArray(char* src, char* dest);
@@ -32,25 +33,12 @@ char* StrnCpy(char* dest, char* src, size_t size)
     for (i = 0; ((i < size) && (src[i] != '\0')); i++)
         dest[i] = src[i];
 
-    size_t strlen_src = strlen(src);
+    int fabs_ = fabs(strlen(src) - size);
 
-    if (strlen_src < size)
+    while (i < fabs_)
     {
-        int j = strlen_src;
-        while (j < size)
-        {
-            dest[j] = '\0';
-            j++;
-        }
-    }
-    if (size <= strlen_src)
-    {
-        int j = size;
-        while (j < strlen_src )
-        {
-            dest[j] = '\0';
-            j++;
-        }
+        dest[i] = '\0';
+        i++;
     }
     return dest;
 }
