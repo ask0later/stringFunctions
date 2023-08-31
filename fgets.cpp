@@ -5,12 +5,11 @@
 
 char* Fgets(char* str, int n, FILE *fp);
 
-int main(int argc, char* argv[])
+int main(int argc, const char* argv[])
 {
     char str[100] = "";
-    const int n = 3;
-    const char* filename = argv[1];
-    FILE *fp = fopen(filename, "r");
+    const int n = 10;
+    FILE *fp = fopen(argv[1], "r");
     Fgets(str, n, fp);
 }
 
